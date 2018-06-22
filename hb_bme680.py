@@ -104,7 +104,7 @@ try:
             now = datetime.strftime(datetime.now(), "%Y-%m-%dT%H:%M:%S%Z")
 
             # data that we're sending to Power BI REST API
-            data = '[{{ "timestamp": "{0}", "temperature": "{1:0.1f}", "humidity": "{2:0.1f}", "pressure": "{2:0.1f}", "airQuality": "{2:0.1f}" }}]'.format(
+            data = '[{{ "timestamp": "{0}", "temperature": "{1:0.1f}", "humidity": "{2:0.1f}", "pressure": "{3:0.1f}", "airQuality": "{4:0.1f}" }}]'.format(
                 now, sensor.data.temperature, hum, sensor.data.pressure, air_quality_score)
 
             # make http post request to power bi
