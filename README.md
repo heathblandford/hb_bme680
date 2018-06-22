@@ -1,7 +1,7 @@
 # hb_bme680 - Indoor Air Sensor Streaming
 
 ### Project Summary
-* Made some sort of zombie code that is a combination of 2 examples from the pimoroni examples code for the bme680 (you can find hit here). 
+* Made some sort of zombie code that is a combination of 2 examples from the pimoroni examples code for the bme680.
 * Streaming data to a power bi interface for easy viewing outside of home network
 
 ## What is the BME680?
