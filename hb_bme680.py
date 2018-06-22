@@ -4,9 +4,10 @@
 # the pimoroni BME680 example code and pimoroni's python lib for this
 
 
-
+import urllib, urllib2, time
 import bme680
-import time
+
+REST_API_URL = ' *** power bi rest api url here *** '
 
 print("""Estimate indoor air quality
 Runs the sensor for a burn-in period, then uses a 
@@ -97,6 +98,18 @@ try:
             
             print("{0:.2f} C,{1:.2f} hPa,{2:.3f} %RH, {3:.2f}".format(
                   sensor.data.temperature, sensor.data.pressure, hum, air_quality_score))
+
+            # ensure that timestamp string is formatted properly
+            now = datetime.strftime(datetime.now(), "%Y-%m-%dT%H:%M:%S%Z")
+
+            # data that we're sending to Power BI REST API
+            data = '[{{ "timestamp": "{0}", "temperature": "{1:0.1f}", "humidity": "{2:0.1f}", "pressure": "{2:0.1f}", "airQuality": "{2:0.1f}" }}]'.format(
+                now, sensor.data.temperature, hum, sensor.data.pressure, air_quality_score)
+
+            # make http post request to power bi
+            req = urllib2.Request(REST_API_URL, data)
+            res = urllib2.urlopen(req)
+
             time.sleep(1)
 
 except KeyboardInterrupt:
