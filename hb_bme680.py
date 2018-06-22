@@ -36,6 +36,8 @@ sensor.select_gas_heater_profile(0)
 
 start_time = time.time()
 curr_time = time.time()
+
+# change this based on how long you want the gas sensor burn in time to be (duh)
 burn_in_time = 300
 
 burn_in_data = []
@@ -92,15 +94,9 @@ try:
 
             # Calculate air_quality_score.
             air_quality_score = hum_score + gas_score
-
-try:
-    while True:
-        if sensor.get_sensor_data():
-
-            output = "{0:.2f} C,{1:.2f} hPa,{2:.3f} %RH, {3:.2f}".format(
-                sensor.data.temperature, sensor.data.pressure, hum, air_quality_score)
-
-            print(output)
+            
+            print("{0:.2f} C,{1:.2f} hPa,{2:.3f} %RH, {3:.2f}".format(
+                  sensor.data.temperature, sensor.data.pressure, hum, air_quality_score))
             time.sleep(1)
 
 except KeyboardInterrupt:
