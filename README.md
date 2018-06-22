@@ -13,9 +13,9 @@ It's an awesome, tiny, little sensor, and on the PCB it's footprint still isn't 
 
 1. Practice soldering headers on 3 spare raspberry pi's you have.
 2. Watch a video on how to solder headers on raspberry pi's. 
-	2a. Really contemplate wtf you're doing
+	1. Really contemplate wtf you're doing
 3. Wait a day, then solder the headers to the bme680 PCB.
-	3a. Sweat profusely, take a shower.
+	1. Sweat profusely, take a shower.
 4. Wire the thing to the raspberry pi.
 5. Install the BME680 python library following the instrucitons in their [github repo](https://github.com/pimoroni/bme680). 
 6. Enable i2c in the Raspberry Pi by going to raspberry-pi config and enabling it, and follow the wiring guide on pimoroni's documentation for wiring the pcb to the raspberry pi for i2c. 
