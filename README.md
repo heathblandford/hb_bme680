@@ -26,7 +26,7 @@ It's an awesome, tiny, little sensor, and on the PCB it's footprint still isn't 
 
 6. Enable i2c in the Raspberry Pi by going to raspberry-pi config and enabling it. 
 
-7. Make ugly code from the "indoor-air-quality.py" and the "read-all.py" examples from pimoroni, and then added an HTTP post request to a Microsoft Power Bi dataset following [this](https://powerbi.microsoft.com/en-us/blog/using-power-bi-real-time-dashboards-to-display-iot-sensor-data-a-step-by-step-tutorial/) tutorial. 
+7. Make ugly code from the "indoor-air-quality.py" and the "read-all.py" examples from pimoroni, and then add an HTTP post request to a Microsoft Power Bi dataset following [this](https://powerbi.microsoft.com/en-us/blog/using-power-bi-real-time-dashboards-to-display-iot-sensor-data-a-step-by-step-tutorial/) tutorial. 
 
 If you're going to use this code, make sure you use your own specific power bi REST API url at the beginning. 
 
