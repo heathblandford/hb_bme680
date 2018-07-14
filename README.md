@@ -46,4 +46,4 @@ To use this code:
 * Run Script on boot (pretty easy I bet)
 * maybe make a stand alone andorid app that views graphical data and pushes notifications for out of bounds parameters
 
-# ¯\\_(ツ)_/¯
+# ¯\\__(ツ)__/¯
