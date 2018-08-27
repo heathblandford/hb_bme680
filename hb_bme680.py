@@ -1,5 +1,3 @@
-# okay so
-# here's the deal
 # this thing sloppy code is put together from 2 examples from 
 # the pimoroni BME680 example code and pimoroni's python lib for this
 
