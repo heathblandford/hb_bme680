@@ -108,7 +108,8 @@ try:
             # make http post request to power bi
             req = urllib2.Request(REST_API_URL, data)
             res = urllib2.urlopen(req)
-
+            
+            #change this value (in seconds) to change how often data is pushed to PowerBi
             time.sleep(1)
 
 except KeyboardInterrupt:
