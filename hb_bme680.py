@@ -1,5 +1,9 @@
-# this thing sloppy code is put together from 2 examples from 
+# okay so
+# here's the deal
+# this thing sloppy code is put together from 2 examples from
 # the pimoroni BME680 example code and pimoroni's python lib for this
+
+# make sure you have the bme680 python lib installed
 
 
 import urllib, urllib2, time
@@ -9,7 +13,7 @@ import bme680
 REST_API_URL = ' *** power bi rest api url here *** '
 
 print("""Estimate indoor air quality
-Runs the sensor for a burn-in period, then uses a 
+Runs the sensor for a burn-in period, then uses a
 combination of relative humidity and gas resistance
 to estimate indoor air quality as a percentage.
 Press Ctrl+C to exit
@@ -17,7 +21,7 @@ Press Ctrl+C to exit
 
 sensor = bme680.BME680(i2c_addr=0x77)
 
-# These oversampling settings can be tweaked to 
+# These oversampling settings can be tweaked to
 # change the balance between accuracy and noise in
 # the data.
 
@@ -31,7 +35,7 @@ sensor.set_gas_heater_temperature(320)
 sensor.set_gas_heater_duration(150)
 sensor.select_gas_heater_profile(0)
 
-# start_time and curr_time ensure that the 
+# start_time and curr_time ensure that the
 # burn_in_time (in seconds) is kept track of.
 
 start_time = time.time()
@@ -94,9 +98,12 @@ try:
 
             # Calculate air_quality_score.
             air_quality_score = hum_score + gas_score
-            
+
+            # Calc Sensor Data in Farhenheit because 'merica
+            tempFahrenheit = (sensor.data.temperature * 1.8) + 32
+
             print("{0:.2f} C,{1:.2f} hPa,{2:.3f} %RH, {3:.2f}".format(
-                  sensor.data.temperature, sensor.data.pressure, hum, air_quality_score))
+                  tempFahrenheit, sensor.data.pressure, hum, air_quality_score))
 
             # ensure that timestamp string is formatted properly
             now = datetime.strftime(datetime.now(), "%Y-%m-%dT%H:%M:%S%Z")
@@ -108,9 +115,9 @@ try:
             # make http post request to power bi
             req = urllib2.Request(REST_API_URL, data)
             res = urllib2.urlopen(req)
-            
-            #change this value (in seconds) to change how often data is pushed to PowerBi
-            time.sleep(1)
+
+            # change value here to change how often data is pushed to url
+            time.sleep(60)
 
 except KeyboardInterrupt:
     pass
