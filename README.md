@@ -14,7 +14,7 @@ It's an awesome, tiny, little sensor, and on the PCB it's footprint still isn't 
 1. Practice soldering headers on 3 spare raspberry pi's you have.
 
 2. Watch a video on how to solder headers on raspberry pi's. 
-	1. Really contemplate wtf you're doing
+	1. Really contemplate what you're doing
 	
 3. Wait a day, then solder the headers to the bme680 PCB.
 	1. Sweat profusely, take a shower.
