@@ -10,23 +10,14 @@ The BME680 is a sensor from Bosch Sensortec that measures temperature, pressue, 
 It's an awesome, tiny, little sensor, and on the PCB it's footprint still isn't that big! 
 
 ## The Process
-
-1. Practice soldering headers on 3 spare raspberry pi's you have.
-
-2. Watch a video on how to solder headers on raspberry pi's. 
-	1. Really contemplate what you're doing
 	
-3. Wait a day, then solder the headers to the bme680 PCB.
-	1. Sweat profusely, take a shower.
-	
-4. Wire the thing to the raspberry pi following [this](https://learn.adafruit.com/adafruit-bme680-humidity-temperature-barometic-pressure-voc-gas/arduino-wiring-test) tutorial, I guess.
-	1. I'm using a raspberry pi zero w, so I found a pinout diagram, and wired it by taking a wild guess, but nailed it on the first try (haha suckers!). 
+1. Wire the sensor to the raspberry pi following [this](https://learn.adafruit.com/adafruit-bme680-humidity-temperature-barometic-pressure-voc-gas/arduino-wiring-test) tutorial. 
 
-5. Install the BME680 python library following the instrucitons in their [github repo](https://github.com/pimoroni/bme680). 
+2. Install the BME680 python library following the instrucitons in their [github repo](https://github.com/pimoroni/bme680). 
 
 6. Enable i2c in the Raspberry Pi by going to raspberry-pi config and enabling it. 
 
-7. Make ugly code from the "indoor-air-quality.py" and the "read-all.py" examples from pimoroni, and then add an HTTP post request to a Microsoft Power Bi dataset following [this](https://powerbi.microsoft.com/en-us/blog/using-power-bi-real-time-dashboards-to-display-iot-sensor-data-a-step-by-step-tutorial/) tutorial. 
+7. Combine code from the "indoor-air-quality.py" and the "read-all.py" examples from pimoroni, and then add an HTTP post request to a Microsoft Power Bi dataset following [this](https://powerbi.microsoft.com/en-us/blog/using-power-bi-real-time-dashboards-to-display-iot-sensor-data-a-step-by-step-tutorial/) tutorial. 
 
 If you're going to use this code, make sure you use your own specific power bi REST API url at the beginning. 
 
@@ -34,7 +25,7 @@ If you're going to use this code, make sure you use your own specific power bi R
 
 To use this code: 
 
-``` git clone https://github.com/cloolis/hb_bme680 ``` or something like that.
+``` git clone https://github.com/cloolis/hb_bme680 ``` 
 
 
 #### Next Steps: 
@@ -45,5 +36,3 @@ To use this code:
 * To either run off battery or house power.
 * Run Script on boot (pretty easy I bet)
 * maybe make a stand alone andorid app that views graphical data and pushes notifications for out of bounds parameters
-
-# ¯\\__(ツ)__/¯
